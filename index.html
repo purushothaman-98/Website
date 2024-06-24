@@ -17,12 +17,42 @@
             color: #fff;
             padding: 1em 0;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #003366;
+        }
+        nav ul li {
+            margin: 0 1em;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #002244;
         }
         main {
-            padding: 2em;
+            padding: 6em 2em 2em 2em;
             max-width: 800px;
             margin: 0 auto;
             background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         section {
             margin-bottom: 2em;
@@ -34,13 +64,30 @@
             color: #004080;
             text-decoration: none;
         }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .scroll-link {
+            cursor: pointer;
+            color: #004080;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .scroll-link:hover {
+            color: #002244;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Purushothaman</h1>
-        <p>Junior Research Fellow at Materials Modeling and Simulation Laboratory</p>
-        <p>Indian Institute of Information Technology Design and Manufacturing, Chennai</p>
+        <nav>
+            <ul>
+                <li><a class="scroll-link" href="#about-me">About Me</a></li>
+                <li><a class="scroll-link" href="#research">Research</a></li>
+                <li><a class="scroll-link" href="#contact-info">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section id="about-me">
@@ -55,10 +102,22 @@
         </section>
         <section id="contact-info">
             <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:bruse.higgs2cosmos@gmail.com">purushothaman</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/purushotaman-m-a720a4236/" target="_blank">Purushothaman's LinkedIn Profile</a></p>
+            <p>Email: <a href="mailto:purushothaman@example.com">purushothaman@example.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/purushothaman" target="_blank">Purushothaman's LinkedIn Profile</a></p>
         </section>
     </main>
+    <script>
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
