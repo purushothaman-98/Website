@@ -3,119 +3,292 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Purushothaman's Research Profile</title>
+  <title>Purushothaman Manivannan | Research Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      /* Color Palette */
+      --primary-color: #1a2a3a; /* Deep Navy */
+      --secondary-color: #2c3e50; /* Slate */
+      --accent-color: #c0a062; /* Muted Gold/Bronze */
+      --bg-color: #f8f9fa;
+      --text-color: #333333;
+      --card-bg: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f4f8;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.8;
     }
-    header {
-      background-color: #004080;
-      color: #fff;
-      text-align: center;
-      padding: 2em 1em;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 0.5em 0;
-      font-size: 1.2em;
-    }
-    main {
-      max-width: 900px;
-      margin: 2em auto;
-      padding: 2em;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    section {
-      margin-bottom: 3em;
-    }
-    h2 {
-      color: #004080;
-      margin-bottom: 0.8em;
-      font-size: 1.8em;
-      border-bottom: 2px solid #004080;
-      padding-bottom: 0.3em;
-    }
-    p, li {
-      text-align: justify;
-      line-height: 1.7;
-      font-size: 1.05em;
-      margin-bottom: 1em;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
+
     a {
-      color: #004080;
       text-decoration: none;
-      transition: color 0.3s ease;
+      color: inherit;
+      transition: var(--transition);
     }
-    a:hover {
-      color: #0066cc;
-      text-decoration: underline;
+
+    /* --- HERO SECTION --- */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
+      padding: 6em 2em;
+      text-align: center;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
-    .contact-info a {
-      font-weight: bold;
+
+    header h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+      margin-bottom: 0.2em;
+      letter-spacing: -1px;
     }
+
+    header .role {
+      font-size: 1.4em;
+      font-weight: 400;
+      opacity: 0.9;
+      color: var(--accent-color);
+      margin-bottom: 0.5em;
+    }
+
+    header .lab {
+      font-size: 1.1em;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    /* --- MAIN CONTAINER --- */
+    main {
+      max-width: 1000px;
+      margin: -4em auto 4em; /* Negative margin pulls it up into the header */
+      padding: 0 2em;
+      position: relative;
+    }
+
+    /* --- CARDS --- */
+    section {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 3em;
+      margin-bottom: 2.5em;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--accent-color);
+      transition: var(--transition);
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2em;
+      margin-bottom: 1em;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background-color: var(--accent-color);
+      bottom: -5px;
+      left: 0;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 1.5em;
+    }
+
+    strong {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    /* --- LINKS --- */
+    .content-link {
+      color: var(--primary-color);
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    .content-link:hover {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    /* --- PUBLICATION LIST --- */
+    ul.pub-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.pub-list li {
+      margin-bottom: 1.5em;
+      padding-left: 1.5em;
+      border-left: 3px solid #ddd;
+      transition: var(--transition);
+    }
+
+    ul.pub-list li:hover {
+      border-left-color: var(--accent-color);
+    }
+
+    .pub-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 0.3em;
+      color: var(--primary-color);
+    }
+
+    .pub-journal {
+      font-style: italic;
+      color: var(--accent-color);
+    }
+
+    /* --- CONTACT BUTTONS --- */
+    .contact-container {
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* --- FOOTER --- */
     footer {
       text-align: center;
-      padding: 1em;
+      padding: 3em 1em;
+      color: #888;
       font-size: 0.9em;
-      color: #777;
-      margin-top: 4em;
+      background-color: #fff;
+      border-top: 1px solid #eaeaea;
+    }
+
+    /* --- MOBILE RESPONSIVE --- */
+    @media (max-width: 768px) {
+      header {
+        padding: 4em 1em;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+      }
+      header h1 {
+        font-size: 2.2em;
+      }
+      main {
+        margin-top: -2em;
+      }
+      section {
+        padding: 2em 1.5em;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Purushothaman Manivannan</h1>
-    <p>PhD Researcher @ University of Antwerp</p>
-    <p>Computational Materials Modeling (COMMIT) Lab | DFT & 2D Materials</p>
+    <div class="header-content">
+      <h1>Purushothaman Manivannan</h1>
+      <div class="role">PhD Researcher @ University of Antwerp</div>
+      <div class="lab">Computational Materials Modeling (COMMIT) Lab | DFT & 2D Materials</div>
+    </div>
   </header>
 
   <main>
     <section id="about-me">
       <h2>About Me</h2>
-      <p>Hello! I am <strong>Purushothaman Manivannan</strong>, a PhD Researcher at the <strong>University of Antwerp</strong> in Belgium. I am a part of the <strong>Computational Materials Modeling (COMMIT) Lab</strong> under Dr. Cem Sevik. My research focuses on excitonic calculations and the computational modeling of two-dimensional (2D) materials.</p>
-      <p>Previously, I worked as a Junior Research Fellow at the <a href="https://lnkd.in/dWeZu9rw" target="_blank">Materials Modeling and Simulation Laboratory</a> at IIITDM Kancheepuram under the guidance of Dr. Debolina Misra. During this time, I explored the impact of defects, strain, and doping on the optoelectronic properties of strongly correlated oxide materials using Density Functional Theory (DFT).</p>
+      <p>Hello! I am <strong>Purushothaman Manivannan</strong>, a dedicated PhD Researcher at the <strong>University of Antwerp</strong> in Belgium. I operate within the <strong>Computational Materials Modeling (COMMIT) Lab</strong> under the supervision of Dr. Cem Sevik. My primary research focus encompasses excitonic calculations and the computational modeling of two-dimensional (2D) materials.</p>
+      <p>Previously, I served as a Junior Research Fellow at the <a href="https://lnkd.in/dWeZu9rw" target="_blank" class="content-link">Materials Modeling and Simulation Laboratory</a> at IIITDM Kancheepuram under the guidance of Dr. Debolina Misra. During this tenure, I explored the impact of defects, strain, and doping on the optoelectronic properties of strongly correlated oxide materials using Density Functional Theory (DFT).</p>
     </section>
 
     <section id="research">
-      <h2>Research</h2>
-      <p>My expertise includes DFT calculations using GGA-PBE and DFT+U methods implemented in VASP. I focus on optimizing optical and transport properties in strongly correlated materials for next-generation transparent conducting applications.</p>
-      <p>Recently, I presented my previous work during the COMMIT Seminar through a talk titled <strong>"Empirical DFT Analysis of d-Orbital Band Engineering in Gapped Metallic Oxide SrVO₃"</strong>. This study examined how biaxial strain and transition-metal doping (3d, 4d, 5d series) can engineer the optoelectronic properties of SrVO₃, a promising indium-free transparent conductor material.</p>
+      <h2>Research Focus</h2>
+      <p>My technical expertise lies in DFT calculations utilizing GGA-PBE and DFT+U methods implemented in VASP. I specialize in optimizing optical and transport properties in strongly correlated materials to advance next-generation transparent conducting applications.</p>
+      <p>Recently, I delivered a talk titled <strong>"Empirical DFT Analysis of d-Orbital Band Engineering in Gapped Metallic Oxide SrVO₃"</strong> during the COMMIT Seminar. This study examined how biaxial strain and transition-metal doping (3d, 4d, 5d series) can engineer the optoelectronic properties of SrVO₃, a promising indium-free transparent conductor material.</p>
     </section>
 
     <section id="publications">
-      <h2>Publications</h2>
-      <ul>
+      <h2>Selected Publications</h2>
+      <ul class="pub-list">
         <li>
-          P. Manivannan, S. Giri, and D. Misra, 
-          "<a href="https://link.springer.com/article/10.1007/s11664-025-11735-8" target="_blank">
-          Tuning the Optoelectronic Properties of SrVO₃ via Strain and Transition-Metal Doping</a>", 
-          <em>Journal of Electronic Materials</em> <strong>54</strong>, 2297 (2025).
+          <a href="https://link.springer.com/article/10.1007/s11664-025-11735-8" target="_blank">
+            <span class="pub-title">Tuning the Optoelectronic Properties of SrVO₃ via Strain and Transition-Metal Doping</span>
+            P. Manivannan, S. Giri, and D. Misra <br>
+            <span class="pub-journal">Journal of Electronic Materials <strong>54</strong>, 2297 (2025)</span>
+          </a>
         </li>
       </ul>
     </section>
 
     <section id="contact-info">
-      <h2>Contact Information</h2>
-      <p>Email: <a href="mailto:bruse.higgs2cosmos@gmail.com">bruse.higgs2cosmos@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/purushothaman-manivannan-a720a4236/" target="_blank">Purushothaman's LinkedIn Profile</a></p>
+      <h2>Get in Touch</h2>
+      <p>I am always open to discussing research collaborations and new opportunities in computational materials science.</p>
+      <div class="contact-container">
+        <a href="mailto:bruse.higgs2cosmos@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/purushothaman-manivannan-a720a4236/" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Purushothaman Manivannan | Research Profile
+    &copy; 2025 Purushothaman Manivannan. All Rights Reserved. <br>
+    Research Profile
   </footer>
+
 </body>
 </html>
